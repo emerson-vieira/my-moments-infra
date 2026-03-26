@@ -1,0 +1,4 @@
+config:
+  aws:region: us-east-1
+  my-moments-infra:dbUsername: postgres
+  my-moments-infra:sesDomain: mymoments.com.br
