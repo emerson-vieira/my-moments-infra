@@ -86,6 +86,6 @@ new aws.iam.UserPolicy(`${projectName}-s3-user-policy`, {
   }`,
 });
 
-export const s3AccessKey = new aws.iam.AccessKey(`${projectName}-s3-access-key`, {
+export const s3AccessKey = new aws.iam.AccessKey(`${projectName}-s3-access-key-v2`, {
   user: s3User.name,
 });

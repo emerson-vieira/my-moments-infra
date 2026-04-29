@@ -3,7 +3,7 @@ import * as random from "@pulumi/random";
 import { projectName, environment, dbUsername } from "../config";
 import { vpc, publicSubnetA, publicSubnetB } from "./vpc";
 
-export const dbPassword = new random.RandomPassword(`${projectName}-db-password`, {
+export const dbPassword = new random.RandomPassword(`${projectName}-db-password-v2`, {
   length: 32,
   special: false,
 });
