@@ -3,3 +3,4 @@ config:
   my-moments-infra:dbUsername: postgresprdmymoments
   my-moments-infra:sesDomain: mymoments.com.br
   my-moments-infra:sesEmails: [developer.emersonjr@gmail.com]
+  my-moments-infra:s3AllowedOrigins: ["https://mymoments.com.br", "https://www.mymoments.com.br"]

@@ -1,6 +1,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
-import { projectName, environment } from "../config";
+import { projectName, environment, s3AllowedOrigins } from "../config";
 
 export const mediaBucket = new aws.s3.Bucket(`${projectName}-media`, {
   bucket: `${projectName}-${environment}-bucket`,
@@ -21,7 +21,7 @@ new aws.s3.BucketCorsConfiguration(`${projectName}-media-cors`, {
     {
       allowedHeaders: ["*"],
       allowedMethods: ["GET", "PUT", "POST", "DELETE"],
-      allowedOrigins: ["*"],
+      allowedOrigins: s3AllowedOrigins,
       exposeHeaders: ["ETag"],
       maxAgeSeconds: 3600,
     },

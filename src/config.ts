@@ -6,3 +6,4 @@ export const environment = pulumi.getStack(); // dev, staging, prod
 export const dbUsername = config.require("dbUsername");
 export const sesDomain = config.require("sesDomain");
 export const sesEmails = config.getObject<string[]>("sesEmails") ?? [];
+export const s3AllowedOrigins = config.getObject<string[]>("s3AllowedOrigins") ?? ["*"];
