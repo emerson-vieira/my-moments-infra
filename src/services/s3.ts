@@ -41,6 +41,18 @@ new aws.s3.BucketLifecycleConfiguration(`${projectName}-media-lifecycle`, {
         },
       ],
     },
+    {
+      id: "expire-tmp-downloads",
+      status: "Enabled",
+      filter: { prefix: "tmp-downloads/" },
+      expiration: { days: 2 },
+    },
+    {
+      id: "abort-incomplete-multipart",
+      status: "Enabled",
+      filter: {},
+      abortIncompleteMultipartUpload: { daysAfterInitiation: 1 },
+    },
   ],
 });
 
@@ -59,7 +71,7 @@ new aws.s3.BucketServerSideEncryptionConfiguration(`${projectName}-media-encrypt
 // IAM User for S3 Access
 // ============================================================
 
-const s3User = new aws.iam.User(`${projectName}-s3-user`, {
+export const s3User = new aws.iam.User(`${projectName}-s3-user`, {
   name: `${projectName}-${environment}-s3-user`,
   tags: { Name: `${projectName}-${environment}-s3-user` },
 });
