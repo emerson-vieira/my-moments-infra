@@ -7,6 +7,7 @@ import { sesSmtpAccessKey } from "./src/services/ses";
 import { sesDomainIdentity, sesDkim } from "./src/services/ses";
 import { sesDomain } from "./src/config";
 import { albumZipFunction } from "./src/services/album-zip";
+import { albumExportFunction } from "./src/services/album-export";
 import { cdnDistribution, cdnPublicKey, cdnSigningKey } from "./src/services/cloudfront";
 
 // ============================================================
@@ -25,6 +26,9 @@ export const s3SecretAccessKey = s3AccessKey.secret;
 
 // Album ZIP
 export const albumZipFunctionName = albumZipFunction.name;
+
+// Album export (Google Drive)
+export const albumExportFunctionName = albumExportFunction.name;
 
 // CloudFront
 export const cloudfrontDomain = cdnDistribution.domainName;
